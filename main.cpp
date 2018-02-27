@@ -30,6 +30,17 @@ public:
         }
     }
 
+    void removeElemet(int e){
+        int eIsIn = elementIsIn(e);
+        if(eIsIn >= 0){
+            if(elements[eIsIn].second > 1){
+                elements[eIsIn].second--;
+            }else{
+                elements.erase(elements.begin() + eIsIn);
+            }
+        }
+    }
+
     ~Bag(){}    // Destructor
 };
 
@@ -41,6 +52,9 @@ int main() {
     mybag.add(3);
     mybag.add(2);
     mybag.add(3);
-    std::cout << mybag.elementIsIn(3) << mybag.elementIsIn(2) << std::endl;
+    std::cout << (mybag.elementIsIn(3) >= 0? "Benne van" : "Nincs benne") << (mybag.elementIsIn(2) >= 0? "Benne van" : "Nincs benne") << std::endl;
+    mybag.removeElemet(2);
+    mybag.removeElemet(3);
+    std::cout << (mybag.elementIsIn(3) >= 0? "Benne van" : "Nincs benne")  << (mybag.elementIsIn(2) >= 0? "Benne van" : "Nincs benne")  << std::endl;
     return 0;
 }
