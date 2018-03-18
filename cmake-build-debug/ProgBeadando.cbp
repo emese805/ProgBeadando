@@ -80,7 +80,16 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="E:/Users/Duba/Documents/GitHub/ProgBeadando/Bag/Bag.cpp">
+			<Option target="ProgBeadando"/>
+		</Unit>
+		<Unit filename="E:/Users/Duba/Documents/GitHub/ProgBeadando/Bag/Bag.h">
+			<Option target="ProgBeadando"/>
+		</Unit>
 		<Unit filename="E:/Users/Duba/Documents/GitHub/ProgBeadando/main.cpp">
+			<Option target="ProgBeadando"/>
+		</Unit>
+		<Unit filename="E:/Users/Duba/Documents/GitHub/ProgBeadando/tests.h">
 			<Option target="ProgBeadando"/>
 		</Unit>
 		<Unit filename="E:/Users/Duba/Documents/GitHub/ProgBeadando/CMakeLists.txt">

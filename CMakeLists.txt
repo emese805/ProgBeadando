@@ -3,4 +3,4 @@ project(ProgBeadando)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(ProgBeadando main.cpp)
+add_executable(ProgBeadando main.cpp tests.h Bag/Bag.cpp Bag/Bag.h)

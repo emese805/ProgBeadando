@@ -122,6 +122,33 @@ ProgBeadando/fast:
 	$(MAKE) -f CMakeFiles\ProgBeadando.dir\build.make CMakeFiles/ProgBeadando.dir/build
 .PHONY : ProgBeadando/fast
 
+Bag/Bag.obj: Bag/Bag.cpp.obj
+
+.PHONY : Bag/Bag.obj
+
+# target to build an object file
+Bag/Bag.cpp.obj:
+	$(MAKE) -f CMakeFiles\ProgBeadando.dir\build.make CMakeFiles/ProgBeadando.dir/Bag/Bag.cpp.obj
+.PHONY : Bag/Bag.cpp.obj
+
+Bag/Bag.i: Bag/Bag.cpp.i
+
+.PHONY : Bag/Bag.i
+
+# target to preprocess a source file
+Bag/Bag.cpp.i:
+	$(MAKE) -f CMakeFiles\ProgBeadando.dir\build.make CMakeFiles/ProgBeadando.dir/Bag/Bag.cpp.i
+.PHONY : Bag/Bag.cpp.i
+
+Bag/Bag.s: Bag/Bag.cpp.s
+
+.PHONY : Bag/Bag.s
+
+# target to generate assembly for a file
+Bag/Bag.cpp.s:
+	$(MAKE) -f CMakeFiles\ProgBeadando.dir\build.make CMakeFiles/ProgBeadando.dir/Bag/Bag.cpp.s
+.PHONY : Bag/Bag.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -158,6 +185,9 @@ help:
 	@echo ... ProgBeadando
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... Bag/Bag.obj
+	@echo ... Bag/Bag.i
+	@echo ... Bag/Bag.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

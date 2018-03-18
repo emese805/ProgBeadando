@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "E:/Users/Duba/Documents/GitHub/ProgBeadando/Bag/Bag.cpp" "E:/Users/Duba/Documents/GitHub/ProgBeadando/cmake-build-debug/CMakeFiles/ProgBeadando.dir/Bag/Bag.cpp.obj"
   "E:/Users/Duba/Documents/GitHub/ProgBeadando/main.cpp" "E:/Users/Duba/Documents/GitHub/ProgBeadando/cmake-build-debug/CMakeFiles/ProgBeadando.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
