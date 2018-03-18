@@ -1,3 +1,0 @@
-E:/Users/Duba/Documents/GitHub/ProgBeadando/cmake-build-debug/CMakeFiles/ProgBeadando.dir
-E:/Users/Duba/Documents/GitHub/ProgBeadando/cmake-build-debug/CMakeFiles/edit_cache.dir
-E:/Users/Duba/Documents/GitHub/ProgBeadando/cmake-build-debug/CMakeFiles/rebuild_cache.dir
