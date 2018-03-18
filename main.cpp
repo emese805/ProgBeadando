@@ -1,26 +1,14 @@
 #include <iostream>
-#include <vector>
-#include "Bag/bag.h"
-
+#include "tests.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-    Bag mybag;
-    std::cout <<"\n"<< mybag;
-    mybag.add(1);
-    mybag.add(3);
-    mybag.add(3);
-    mybag.add(3);
-    mybag.add(2);
-    mybag.add(2);
-    mybag.add(2);
-    mybag.add(4);
-    mybag.add(2);
-    mybag.add(2);
-    mybag.add(2);
-    mybag.add(3);
-    std::cout <<"\n"<< mybag;
-    mybag.removeElemet(1);
-    std::cout <<"\n"<< mybag;
+    BagTester bt;
+    std::cout << "Test1 " << (bt.test1() ? "passed" : "failed") << std::endl;
+    std::cout << "Test2 " << (bt.test2() ? "passed" : "failed") << std::endl;
+    std::cout << "Test3 " << (bt.test3() ? "passed" : "failed") << std::endl;
+    std::cout << "Test4 " << (bt.test4() ? "passed" : "failed") << std::endl;
+    std::cout << "Test5 " << (bt.test5() ? "passed" : "failed") << std::endl;
+    std::cout << "Test6 " << (bt.test6() ? "passed" : "failed") << std::endl;
+    bt.logBagToConsole();
     return 0;
 }

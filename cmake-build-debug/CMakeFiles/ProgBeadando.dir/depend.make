@@ -4,6 +4,7 @@
 CMakeFiles/ProgBeadando.dir/Bag/Bag.cpp.obj: ../Bag/Bag.cpp
 CMakeFiles/ProgBeadando.dir/Bag/Bag.cpp.obj: ../Bag/Bag.h
 
-CMakeFiles/ProgBeadando.dir/main.cpp.obj: ../Bag/bag.h
+CMakeFiles/ProgBeadando.dir/main.cpp.obj: ../Bag/Bag.h
 CMakeFiles/ProgBeadando.dir/main.cpp.obj: ../main.cpp
+CMakeFiles/ProgBeadando.dir/main.cpp.obj: ../tests.h
 

@@ -8,6 +8,7 @@ Bag::Bag(const Bag& b){
         }
     }
 }
+
 const int Bag::elementIsIn(const int e) const{   //e elem benne van-e a zsákban
     for(int i = 0; i < elements.size(); i++){
         if(elements[i].first == e) return i;
@@ -28,7 +29,7 @@ void Bag::removeElemet(const int e){                   //e elem törlése a zsá
     int eIsIn = elementIsIn(e);
     if(eIsIn >= 0){
         if(elements[eIsIn].second > 1){
-            elements[eIsIn].second-=1;
+            elements[eIsIn].second -= 1;
         }else{
             elements.erase(elements.begin() + eIsIn);
         }
@@ -52,10 +53,11 @@ const bool Bag::isEmpty()const{                  //Üres-e a zsák
 }
 
 const Bag& Bag::operator+(const Bag& b){         //Unió, használata a plusz jel (+) pl.: Bag Union = Bag1 + Bag2;
-    Bag tmp(b);
+    Bag *tmp = new Bag(b);
     for(int i = 0; i < this->elements.size(); i++){
         for(int j = 0; j<this->elements[i].second; j++){
-            tmp.add(this->elements[i].first);
+            tmp->add(this->elements[i].first);
         }
     }
+    return *tmp;
 }

@@ -16,17 +16,13 @@ iostream
 vector
 -
 
-E:/Users/Duba/Documents/GitHub/ProgBeadando/Bag/bag.h
-iostream
--
-vector
--
-
 E:/Users/Duba/Documents/GitHub/ProgBeadando/main.cpp
 iostream
 -
-vector
--
-Bag/bag.h
-E:/Users/Duba/Documents/GitHub/ProgBeadando/Bag/bag.h
+tests.h
+E:/Users/Duba/Documents/GitHub/ProgBeadando/tests.h
+
+E:/Users/Duba/Documents/GitHub/ProgBeadando/tests.h
+Bag/Bag.h
+E:/Users/Duba/Documents/GitHub/ProgBeadando/Bag/Bag.h
 
