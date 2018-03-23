@@ -10,7 +10,7 @@ public:
     Bag(const Bag& b);
     const int elementIsIn(const int e) const;
     void add(const int e);
-    void removeElemet(const int e);
+    void removeElement(const int e);
     void removeAll();
     const int countOf(const int e) const;
     const bool isEmpty()const;

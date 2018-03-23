@@ -25,7 +25,7 @@ void Bag::add(const int e){                      //e elem hozzáadása a zsákho
     }
 }
 
-void Bag::removeElemet(const int e){                   //e elem törlése a zsákból
+void Bag::removeElement(const int e){                   //e elem törlése a zsákból
     int eIsIn = elementIsIn(e);
     if(eIsIn >= 0){
         if(elements[eIsIn].second > 1){

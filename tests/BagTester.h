@@ -47,7 +47,7 @@ public:
         clear();
         b1.add(3);
         b1.add(5);
-        b1.removeElemet(3);
+        b1.removeElement(3);
         return b1.elementIsIn(3) == -1;
     }
     /*

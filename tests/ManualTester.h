@@ -4,65 +4,129 @@
 #include <iostream>
 #include <vector>
 #include "../Bag/Bag.h"
+#include "BasicTester/MenuTemplate.h"
 
 class ManualTester{
 private:
     Bag A;
     Bag B;
+    Menu myMenu;
     bool exit;
-
-    std::vector<std::string> menu;
-    const std::string subMenuQuestion = "Which Bag do you want to run the test?";
-    const std::string subMenuAnswer1 = "Bag A";
-    const std::string subMenuAnswer2 = "Bag B";
-
-public:
-    ManualTester(){
-        this->exit = false;
-        menu.push_back("Add element to Bag");
-        menu.push_back("Remove an element from Bag");
-        menu.push_back("Remove all elements from Bag");
-        menu.push_back("Bag is empty?");
-        menu.push_back("Element is in the Bag?");
-        menu.push_back("Count of element is in the bag");
-        menu.push_back("2 Bag union");
-        menu.push_back("Write Bag to console");
-        menu.push_back("Exit");
-    }
-    int mainMenu(){
-        std::cout << "Navigation" << std::endl;
-        std::cout << "------------" << std::endl;
-        for(int i = 0; i<menu.size();i++){
-            std::cout << i+1 << " - " << menu[i] << std::endl;
-        }
-        std::cout << "Choose one of this menu points:" <<std::endl;
-
-        std::string tmp;
-        int sw;
-        bool hiba;
-        do{
-            std::cin >> tmp;
-            hiba=tmp!="1" && tmp!="2" && tmp!="3" && tmp!="4" && tmp!="5" && tmp!="6" && tmp!="7" && tmp!="8" && tmp!="9";
-            if(hiba){
-                std::cout<<"Nincs ilyen menupont. Probald ujra: ";
+    int readInt(){
+        int tmp;
+        std::cin >> tmp;
+        while (std::cin.fail()){
+            if(std::cin.fail()){
+                std::cin.clear();
+                std::string ignoreLine;             //read the invalid input into it
+                std::getline(std::cin, ignoreLine); //read the line till next space
             }
-        }while(hiba);
-        sw=atoi(tmp.c_str());
-        std::cout<<std::endl;
-        return sw;
+            std::cout << "---------------------------------" << std::endl;
+            std::cout <<"Try again: ";
+            std::cin >> tmp;
+        }
+        return tmp;
     }
-    void main(){
-        do{
-            int sw = mainMenu();
-            switch (sw){
-                case 1:
-
+public:
+    ManualTester() : myMenu(Menu("Manual Bag Tester")) {
+        //Add menu points for myMenu
+        myMenu.addNewMenuPoint(Menu("Add element for one Bag"));                            //  1
+        myMenu.lastMenuPoint().addNewMenuPoint(Menu("Add element for A bag"));              // 11   - Leaf
+        myMenu.lastMenuPoint().addNewMenuPoint(Menu("Add element for B bag"));              // 21   - Leaf
+        myMenu.addNewMenuPoint(Menu("Remove element from one Bag"));                        //  2
+        myMenu.lastMenuPoint().addNewMenuPoint(Menu("Remove element from A bag"));          // 12   - Leaf
+        myMenu.lastMenuPoint().addNewMenuPoint(Menu("Remove element from B bag"));          // 22   - Leaf
+        myMenu.addNewMenuPoint(Menu("Remove all element from one Bag"));                    //  3
+        myMenu.lastMenuPoint().addNewMenuPoint(Menu("Remove all element from A bag"));      // 13   - Leaf
+        myMenu.lastMenuPoint().addNewMenuPoint(Menu("Remove all element from B bag"));      // 23   - Leaf
+        myMenu.addNewMenuPoint(Menu("Element is in the Bag function test"));                //  4
+        myMenu.lastMenuPoint().addNewMenuPoint(Menu("Check Element is in the A bag"));      // 14   - Leaf
+        myMenu.lastMenuPoint().addNewMenuPoint(Menu("Check Element is in the B bag"));      // 24   - Leaf
+        myMenu.addNewMenuPoint(Menu("Count of element in one Bag"));                        //  5
+        myMenu.lastMenuPoint().addNewMenuPoint(Menu("Count of element in one A bag"));      // 15   - Leaf
+        myMenu.lastMenuPoint().addNewMenuPoint(Menu("Count of element in one B bag"));      // 25   - Leaf
+        myMenu.addNewMenuPoint(Menu("Bag is Empty?"));                                      //  6
+        myMenu.lastMenuPoint().addNewMenuPoint(Menu("Check A bag is empty?"));              // 16   - Leaf
+        myMenu.lastMenuPoint().addNewMenuPoint(Menu("Check B bag is empty?"));              // 26   - Leaf
+        myMenu.addNewMenuPoint(Menu("A + B bags Union"));                                   //  7   - Leaf
+        myMenu.addNewMenuPoint(Menu("Write Bag to the console"));                           //  8
+        myMenu.lastMenuPoint().addNewMenuPoint(Menu("Write A bag to the console"));         // 18   - Leaf
+        myMenu.lastMenuPoint().addNewMenuPoint(Menu("Write B bag to the console"));         // 28   - Leaf
+    }
+    void runManualTest(){
+        bool end = false;
+        int tmp;
+        do {
+            //Switch Menu
+            switch (myMenu.switchMenu()) {
+                case 11:
+                    tmp = readInt();
+                    A.add(tmp);
+                    std::cout << tmp << " added to the A bag\n";
+                    break;
+                case 21:
+                    tmp = readInt();
+                    B.add(tmp);
+                    std::cout << tmp << " added to the B bag\n";
+                    break;
+                case 12:
+                    tmp = readInt();
+                    A.removeElement(tmp);
+                    std::cout << tmp << " deleted from the A bag\n";
+                    break;
+                case 22:
+                    tmp = readInt();
+                    B.removeElement(tmp);
+                    std::cout << tmp << " deleted from the B bag\n";
+                    break;
+                case 13:
+                    A.removeAll();
+                    std::cout << "All element from the A bag deleted\n";
+                    break;
+                case 23:
+                    B.removeAll();
+                    std::cout << "All element from the B bag deleted\n";
+                    break;
+                case 14:
+                    tmp = readInt();
+                    std::cout << tmp << (A.elementIsIn(tmp) >= 0 ? " is" : " is not") << " in the A bag\n";
+                    break;
+                case 24:
+                    tmp = readInt();
+                    std::cout << tmp << " is "<< (B.elementIsIn(tmp) >= 0 ? "" : "not") << " in the B bag\n";
+                    break;
+                case 15:
+                    tmp = readInt();
+                    std::cout << tmp << " number count in the A bag is " << A.countOf(tmp) << std::endl;
+                    break;
+                case 25:
+                    tmp = readInt();
+                    std::cout << tmp << " number count in the B bag is " << B.countOf(tmp) << std::endl;
+                    break;
+                case 16:
+                    std::cout << "A bag is " << (A.isEmpty()? "":"not") << " empty\n";
+                    break;
+                case 26:
+                    std::cout << "B bag is " << (B.isEmpty()? "":"not") << " empty\n";
+                    break;
+                case 7:
+                    std::cout << "The A + B = \n" << A+B;
+                    break;
+                case 18:
+                    std::cout << A;
+                    break;
+                case 28:
+                    std::cout << B;
+                    break;
+                case -1:
+                    std::cout << "Exit\n";
+                    end = true;
+                    break;
+                default:
+                    std::cout << "Menu Error" << std::endl;
                     break;
             }
-        }while(!this->exit);
-    }
-    bool getExit (){
-        return this->exit;
+        }while (!end);
     }
     ~ManualTester(){}
 };
