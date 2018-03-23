@@ -3,7 +3,6 @@
 #include <iostream>
 #include <vector>
 
-
 class Bag{
     std::vector< std::pair<int, int> > elements;
 public:
@@ -16,7 +15,6 @@ public:
     const int countOf(const int e) const;
     const bool isEmpty()const;
     const Bag& operator+(const Bag& b);
-    //const Bag& Bag::operator=(const Bag& b);
     friend std::ostream& operator<<(std::ostream& out, const Bag& b){    //Zsák kiírása
         out << "Zsak Tartalma:\n";
         for(int i = 0; i<b.elements.size();i++){

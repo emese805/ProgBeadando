@@ -1,7 +1,7 @@
 #ifndef PROGBEADANDO_TESTS_H
 #define PROGBEADANDO_TESTS_H
 
-#include "Bag/Bag.h"
+#include "../Bag/Bag.h"
 
 /*
  * Constructor Test
