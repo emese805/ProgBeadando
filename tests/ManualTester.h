@@ -93,7 +93,7 @@ public:
                     break;
                 case 24:
                     tmp = readInt();
-                    std::cout << tmp << " is "<< (B.elementIsIn(tmp) >= 0 ? "" : "not") << " in the B bag\n";
+                    std::cout << tmp << (B.elementIsIn(tmp) >= 0 ? "" : "not") << " in the B bag\n";
                     break;
                 case 15:
                     tmp = readInt();

@@ -18,8 +18,15 @@ int main() {
     std::cout << "Test6 " << (bt.test6() ? "passed" : "failed") << std::endl;
     bt.logBagToConsole();
     */
+    Bag myNewBag;
+    myNewBag.add(3);
+    myNewBag.add(3);
+    myNewBag.add(3);
+    myNewBag.add(3);
 
-    ManualTester mt;
-    mt.runManualTest();
+    Bag myAnotherBag(myNewBag);
+    std::cout << myAnotherBag;
+/*    ManualTester mt;
+    mt.runManualTest();*/
     return 0;
 }

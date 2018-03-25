@@ -4,15 +4,15 @@
 #include <vector>
 
 class Bag{
-    std::vector< std::pair<int, int> > elements;
+    std::vector< std::pair<int, unsigned int> > elements;
 public:
     Bag();
     Bag(const Bag& b);
-    const int elementIsIn(const int e) const;
-    void add(const int e);
-    void removeElement(const int e);
+    const int elementIsIn(int e) const;
+    void add(int e);
+    void removeElement(int e);
     void removeAll();
-    const int countOf(const int e) const;
+    const int countOf(int e) const;
     const bool isEmpty()const;
     const Bag& operator+(const Bag& b);
     friend std::ostream& operator<<(std::ostream& out, const Bag& b){    //Zsák kiírása

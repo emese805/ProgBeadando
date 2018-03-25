@@ -2,14 +2,10 @@
 
 Bag::Bag(){}     // Default Constructor
 Bag::Bag(const Bag& b){
-    for(int i = 0; i < b.elements.size(); i++){
-        for(int j = 0; j<b.elements[i].second; j++){
-            this->add(b.elements[i].first);
-        }
-    }
+    this->elements = std::vector< std::pair<int, unsigned int> >(b.elements);
 }
 
-const int Bag::elementIsIn(const int e) const{   //e elem benne van-e a zsákban
+const int Bag::elementIsIn(int e) const{   //e elem benne van-e a zsákban
     for(int i = 0; i < elements.size(); i++){
         if(elements[i].first == e) return i;
     }
@@ -21,11 +17,11 @@ void Bag::add(const int e){                      //e elem hozzáadása a zsákho
     if(eIsIn >= 0){
         elements[eIsIn].second += 1;
     }else{
-        elements.push_back(std::pair<int,int>(e,1));
+        elements.push_back(std::pair<int,unsigned int>(e,1));
     }
 }
 
-void Bag::removeElement(const int e){                   //e elem törlése a zsákból
+void Bag::removeElement(int e){                   //e elem törlése a zsákból
     int eIsIn = elementIsIn(e);
     if(eIsIn >= 0){
         if(elements[eIsIn].second > 1){
@@ -40,7 +36,7 @@ void Bag::removeAll(){
     elements.clear();
 }
 
-const int Bag::countOf(const int e) const{       //Egy e elem hányszor van a zsákban
+const int Bag::countOf(int e) const{       //Egy e elem hányszor van a zsákban
     int eIsIn = elementIsIn(e);
     if(eIsIn>=0){
         return elements[eIsIn].second;
