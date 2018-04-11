@@ -1,0 +1,3 @@
+/home/ezsandu/GitHub/ProgBeadando/Bead_2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/ezsandu/GitHub/ProgBeadando/Bead_2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/ezsandu/GitHub/ProgBeadando/Bead_2/cmake-build-debug/CMakeFiles/Bead_2.dir
